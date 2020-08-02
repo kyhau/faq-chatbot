@@ -1,0 +1,4 @@
+# https://stackoverflow.com/questions/55962678/installing-chatterbot-but-getting-error-could-not-build-wheels-for-spacy-which
+# pip install --no-use-pep517 chatterbot
+chatterbot
+chatterbot_corpus
