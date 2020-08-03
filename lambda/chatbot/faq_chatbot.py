@@ -5,7 +5,8 @@ import logging
 logging.getLogger().setLevel(logging.DEBUG)
 
 BOT_NAME = 'Firebug'
-KEY_NEW = '/new'
+KEY_ADD = '/add'
+# TODO KEY_REPLACE = '/replace'
 
 
 def ensure_nltk_download_succeeded():
@@ -42,8 +43,8 @@ class BaseChatbot():
             trainer.train(conversation)
 
     def process_new_faq(self, content):
-        """Process message with KEY_NEW"""
-        lines = list(map(str.strip, content.split(KEY_NEW)[1:]))
+        """Process message with KEY_ADD"""
+        lines = list(map(str.strip, content.split(KEY_ADD)[1:]))
         logging.debug(lines)
         self.add_conversations([lines])
 
