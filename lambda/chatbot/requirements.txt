@@ -1,4 +1,7 @@
 # https://stackoverflow.com/questions/55962678/installing-chatterbot-but-getting-error-could-not-build-wheels-for-spacy-which
 # pip install --no-use-pep517 chatterbot
+# or
+# pip install --no-binary spacy chatterbot
 chatterbot
 chatterbot_corpus
+pyyaml==5.1    # conflict: chatterbot 1.0.5 requires pyyaml<5.2,>=5.1, but chatterbot-corpus 1.2.0 requires PyYAML<4.0,>=3.12,
