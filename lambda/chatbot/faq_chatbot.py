@@ -8,6 +8,20 @@ BOT_NAME = 'Firebug'
 KEY_NEW = '/new'
 
 
+def ensure_nltk_download_succeeded():
+    # If failed to complete nltk.download because of "certificate verify failed"
+    # https://stackoverflow.com/questions/38916452/nltk-download-ssl-certificate-verify-failed
+    import nltk
+    import ssl
+    try:
+        _create_unverified_https_context = ssl._create_unverified_context
+    except AttributeError:
+        pass
+    else:
+        ssl._create_default_https_context = _create_unverified_https_context
+    nltk.download('stopwords')
+
+
 class BaseChatbot():
     def __init__(self, name):
         self._name = name
@@ -65,6 +79,8 @@ class BaseChatbot():
 
 
 def main():
+    ensure_nltk_download_succeeded()
+
     BaseChatbot(BOT_NAME).running_on_terminal()
 
 
