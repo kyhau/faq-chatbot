@@ -1,10 +1,11 @@
-from chatterbot.trainers import ChatterBotCorpusTrainer, ListTrainer
-from chatterbot import ChatBot
 import logging
+
+from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer, ListTrainer
 
 logging.getLogger().setLevel(logging.DEBUG)
 
-BOT_NAME = 'Firebug'
+BOT_NAME = 'Firefly'
 KEY_ADD = '/add'
 # TODO KEY_REPLACE = '/replace'
 
@@ -64,7 +65,7 @@ class BaseChatbot():
             # Press ctrl-c or ctrl-d on the keyboard to exit
             except (KeyboardInterrupt, EOFError, SystemExit):
                 break
-    
+
     def training(self):
         """Initial training"""
 
